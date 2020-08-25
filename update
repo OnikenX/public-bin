@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "Arch repositories and AUR:"
+yay -Syu --noconfirm
+echo
+echo "Flatpak:"; flatpak update -y
+echo
+echo "pipx upgrade: ";pipx upgrade-all
+echo
+echo "npm upgrade:"; npm update -g
+echo
+echo "Proton-GE:";updatePGEfast
+echo
+echo "Ruby Bundle:"; gem update

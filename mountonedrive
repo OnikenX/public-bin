@@ -1,0 +1,2 @@
+#!/bin/bash
+rclone mount OneDrive: /home/oniken/clouds/onedrive --vfs-cache-mode writes

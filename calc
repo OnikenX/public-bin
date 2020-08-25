@@ -1,0 +1,2 @@
+#!/bin/bash
+echo $@ | octave | tr -s " " | lolcat

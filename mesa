@@ -1,0 +1,42 @@
+#!/bin/bash
+
+
+function install-mesa(){
+	sudo bash -c 'echo -e "s\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\n" | pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-radeon lib32-vulkan-radeon --needed'
+}
+
+function install-mesa-git(){
+	sudo bash -c 'echo -e "s\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\n" | pacman -S mesa-git lib32-mesa-git vulkan-intel-git lib32-vulkan-intel-git vulkan-radeon-git lib32-vulkan-radeon-git --needed'	
+}
+
+function get-mesa-version(){
+	pacman -Q $IN
+}
+
+if pacman -Ss lib32-mesa-git | grep instalado > /dev/null
+then
+	IN=mesa-git
+	CHANGE=mesa
+else
+	IN=mesa
+	CHANGE=mesa-git
+fi
+
+if  [[ $1 == "--change" ]] || [[ $1 == "-c" ]] 
+then
+	if [[ $IN == 'mesa-git' ]]
+	then
+		install-mesa
+	else
+		install-mesa-git
+	fi
+elif [[ $1 == '-v' ]] || [[ $1 == '--version' ]]
+then
+	get-mesa-version
+else
+	echo in
+	get-mesa-version
+	echo -e "\nArguments:\n\tmesa -c\n\tmesa --change\n\t\tChange to $CHANGE\n\tmesa -v\n\tmesa --version\n\t\tShows only the version"
+fi
+
+

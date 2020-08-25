@@ -1,0 +1,13 @@
+#!/bin/bash
+UPDATES=$(pacaur -Quq)
+N=$(echo -n "$UPDATES" | grep -c '^')
+if [[ $N != 0 ]]
+then
+	echo existem $N updates por fazer:
+	for i in $UPDATES 
+	do
+		echo -e "\t$i"
+	done
+else
+	echo todos os updates estao feitos
+fi

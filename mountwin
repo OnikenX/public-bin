@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo modprobe nbd
+sudo qemu-nbd -c /dev/nbd0 /home/oniken/.local/share/libvirt/images/win7.qcow2

@@ -1,0 +1,2 @@
+#!/bin/bash
+WINEPREFIX=/home/oniken/.local/share/wineprefixes/windev wine cmd /c windev \&\& cl /D_UNICODE /DUNICODE /D_CRT_SECURE_NO_WARNINGS $@

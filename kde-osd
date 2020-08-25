@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd /home/oniken/gits/onikenx/kde-osd
+sh osd-stealth
+cd -

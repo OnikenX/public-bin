@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#export WINEPREFIX=${WINEPREFIX:-$HOME/.local/share/wineprefixes/windev/};export PROGRAMFILES="c:\Program Files";export WSDK="$PROGRAMFILES\Microsoft Visual Studio 10.0";export WPSDK="$PROGRAMFILES\Microsoft SDKs\Windows\v7.1";export WINEPATH="c:\windows;c:\windows\system32;$WSDK\Common7\IDE;$WSDK\VC\bin";export INCLUDE="$WSDK\VC\include;$WPSDK\Include";iexport LIB="$WSDK\VC\lib;$WPSDK\Lib"; echo -n "in windows development mode\n"
+STAGING_WRITECOPY=1 WINEPREFIX=/home/oniken/.local/share/wineprefixes/windev zsh

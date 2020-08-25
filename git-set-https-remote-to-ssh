@@ -1,0 +1,2 @@
+#!/bin/bash
+git remote set-url origin $(git remote -v | replace 'https://github.com/' 'git@github.com:' | head -n  1 | cut -f 2 | cut -d ' ' -f 1)
