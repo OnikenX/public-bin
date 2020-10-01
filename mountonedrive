@@ -1,2 +1,6 @@
 #!/bin/bash
-rclone mount OneDrive: /home/oniken/clouds/onedrive --vfs-cache-mode writes
+logger=/home/onikenx/.var/logs/mounts/mega
+
+echo -e "\n\t==== $(date) ====\n" >> $logger
+
+rclone mount onedrive: /home/onikenx/Clouds/OneDrive/ --vfs-cache-mode writes >> $logger 2>> $logger &

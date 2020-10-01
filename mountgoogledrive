@@ -1,2 +1,7 @@
 #!/bin/bash
-rclone mount googledrive: /home/oniken/clouds/googledrive --vfs-cache-mode writes
+
+logger=/home/onikenx/.var/logs/mounts/mega
+
+echo -e "\n\t==== $(date) ====\n" >> $logger
+
+rclone mount googledrive: /home/onikenx/Clouds/GoogleDrive/ --vfs-cache-mode writes >> $logger 2>> $logger &

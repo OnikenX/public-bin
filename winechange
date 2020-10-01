@@ -1,0 +1,7 @@
+#!/bin/bash
+if wine --version | grep -y tkg > /dev/null
+then
+	printf "y\ny\ny" | yay -S wine
+else
+	printf "y\ny\ny" | yay -S wine-tkg-staging-fsync-vkd3d-git
+fi

@@ -1,8 +1,8 @@
 #!/bin/bash
 echo "Arch repositories and AUR:"
-yay -Syu --noconfirm
+yay --pacman powerpill -Syu --noconfirm
 echo
-echo "Flatpak:"; flatpak update -y
+echo "Flatpak:"; sudo flatpak update -y
 echo
 echo "pipx upgrade: ";pipx upgrade-all
 echo

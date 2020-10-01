@@ -2,18 +2,18 @@
 
 
 function install-mesa(){
-	sudo bash -c 'echo -e "s\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\n" | pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-radeon lib32-vulkan-radeon --needed'
+	sudo bash -c 'echo -e "y\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\n" | pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-radeon lib32-vulkan-radeon xf86-video-amdgpu xf86-video-intel --needed'
 }
 
 function install-mesa-git(){
-	sudo bash -c 'echo -e "s\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\n" | pacman -S mesa-git lib32-mesa-git vulkan-intel-git lib32-vulkan-intel-git vulkan-radeon-git lib32-vulkan-radeon-git --needed'	
+	sudo bash -c 'echo -e "y\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\n" | pacman -S mesa-git lib32-mesa-git vulkan-intel-git lib32-vulkan-intel-git vulkan-radeon-git lib32-vulkan-radeon-git xf86-video-amdgpu-git xf86-video-intel-git --needed'	
 }
 
 function get-mesa-version(){
 	pacman -Q $IN
 }
 
-if pacman -Ss lib32-mesa-git | grep instalado > /dev/null
+if pacman -Q mesa | grep [g]it > /dev/null
 then
 	IN=mesa-git
 	CHANGE=mesa
@@ -34,9 +34,16 @@ elif [[ $1 == '-v' ]] || [[ $1 == '--version' ]]
 then
 	get-mesa-version
 else
-	echo in
+	printf "using "
 	get-mesa-version
-	echo -e "\nArguments:\n\tmesa -c\n\tmesa --change\n\t\tChange to $CHANGE\n\tmesa -v\n\tmesa --version\n\t\tShows only the version"
+	printf \
+"Arguments:
+	-c
+	--change
+		Change to $CHANGE\n\
+	-v
+	--version
+		Shows only the version"
 fi
 
 

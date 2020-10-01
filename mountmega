@@ -1,2 +1,5 @@
 #!/bin/bash
-rclone mount mega: /home/oniken/clouds/mega --vfs-cache-mode writes
+logger=/home/onikenx/.var/logs/mounts/mega
+
+echo -e "\n\t==== $(date) ====\n" >> $logger
+rclone mount mega: /home/onikenx/Clouds/MEGA/ --vfs-cache-mode writes >> $logger 2>> $logger &
