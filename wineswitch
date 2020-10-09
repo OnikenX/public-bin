@@ -1,0 +1,34 @@
+#!/bin/bash
+
+printhelp(){
+	echo "args:"
+	echo "  staging         installs staging branch"
+	echo "  stable          installs stable branch"
+        echo "  -h"
+        echo "  --help          prints this"
+        echo "  switch          switches to the oposite" 
+        echo 
+        echo "default:"                                         
+        echo "                  prints this"
+}
+
+if [[ $# > 0 ]]
+then
+	if [[ $1 == 'staging' ]]
+	then
+		echo -e 'y\ny\n' | sudo powerpill -S wine-tkg-staging-fsync-vkd3d-git --needed
+	elif [[ $1 == 'stable' ]]
+	then
+		echo -e 'y\ny\n' | sudo powerpill -S wine-tkg-fsync-vkd3d-git --needed
+	elif [[ $1 == '-h' ]] || [[ $1 == '--help' ]]
+	then
+		printhelp
+	else
+		echo option $1 not defined
+		echo
+		printhelp
+	fi
+else
+	echo "wine version:"
+	wine --version
+fi

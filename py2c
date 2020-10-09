@@ -1,0 +1,2 @@
+#!/bin/bash
+nuitka3 --standalone --python-flag=no_site $@
