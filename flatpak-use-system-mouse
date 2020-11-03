@@ -1,0 +1,8 @@
+#!/bin/bash
+NAPPS=$(flatpak list --app --columns=application |wc -l)
+APPS=$(flatpak list --app --columns=application)
+
+for app in $APPS
+do
+	 flatpak --user override $app --filesystem=/home/$USER/.icons/:ro
+done
