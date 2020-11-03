@@ -1,6 +1,5 @@
 #!/bin/bash
-NAPPS=$(flatpak list --app --columns=application |wc -l)
-APPS=$(flatpak list --app --columns=application)
+APPS=$(flatpak list --columns=application )
 
 for app in $APPS
 do
