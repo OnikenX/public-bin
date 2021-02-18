@@ -1,0 +1,5 @@
+#!/bin/bash
+export STEAM_COMPAT_DATA_PATH=$HOME/.local/share/wineprefixes/proton513
+mkdir ~/.local/share/wineprefixes/proton513
+export PC_COMMON=~/.steam/steam/steamapps/common
+proton-call -c "/home/onikenx/.local/share/Steam/steamapps/common/Proton 5.13/" $@

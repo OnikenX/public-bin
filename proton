@@ -1,0 +1,5 @@
+#!/bin/bash
+export STEAM_COMPAT_DATA_PATH=$HOME/.local/share/wineprefixes/proton61
+mkdir ~/.local/share/wineprefixes/proton61
+export PC_COMMON=~/.steam/steam/steamapps/common
+proton-call -c ~/.steam/steam/compatibilitytools.d/Proton-6.1-GE-2/ $@

@@ -1,1 +1,2 @@
+#!/bin/bash
 pip list  --user | tail -n $(expr $(pip list  --user | wc -l) - 2) | cut -d " " -f -1

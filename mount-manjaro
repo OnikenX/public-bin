@@ -1,0 +1,3 @@
+#!/bin/bash
+guestmount -d manjaro -i ~/manjaro
+
