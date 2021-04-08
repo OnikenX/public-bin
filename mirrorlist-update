@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo bash -c "cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bck && curl \"https://archlinux.org/mirrorlist/?country=AT&country=DK&country=FI&country=FR&country=DE&country=GR&country=HU&country=IE&country=IT&country=LU&country=NL&country=NO&country=PL&country=PT&country=ES&country=SE&country=CH&country=GB&protocol=http&protocol=https&ip_version=4&ip_version=6&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 10 - | tee /etc/pacman.d/mirrorlistst"
