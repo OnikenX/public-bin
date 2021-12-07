@@ -4,3 +4,5 @@ alias mingw='x86_64-w64-mingw32-c++'
 alias make='make -j8'
 alias ipca='ip -color addr'
 alias ls=lsd
+alias cls=clear
+alias py=python

@@ -1,0 +1,2 @@
+#!/bin/bash
+ssh -X ubuntu@$(lxc list -c n4 -f csv | grep ubuntu | cut -d , -f 2- | cut -d ' ' -f 1) $@
