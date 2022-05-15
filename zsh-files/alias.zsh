@@ -6,3 +6,6 @@ alias ipca='ip -color addr'
 alias ls=lsd
 alias cls=clear
 alias py=python
+alias node='node --no-warnings'
+alias rm='trash'
+alias yt='yt-dlt'

@@ -1,1 +1,11 @@
 export WINEDEBUG=-all
+export CHROME_EXECUTABLE=/bin/chromium
+export DISCORD_RPC_PATH=/home/onikenx/.local/share/rpc-wine
+export WINEDLLPATH=$WINEDLLPATH:$DISCORD_RPC_PATH/bin64:$DISCORD_RPC_PATH/bin32
+export JAVA_HOME=/usr/lib/jvm/default-runtime
+export ANDROID_SDK_ROOT=/home/onikenx/Android/Sdk
+export LUTRIS_ENABLE_PROTON=1
+export ANDROID_HOME=$ANDROID_SDK_ROOT
+export ANDROID_NDK_HOME=$ANDROID_HOME/ndk-bundle
+export PATH="$HOME/.local/share/npm/bin:$PATH"
+export DISCORD_GAME_SDK_PATH=/home/onikenx/.local/lib/discord_game_sdk
